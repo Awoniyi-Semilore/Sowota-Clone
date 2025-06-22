@@ -1,7 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../component/header'
-import Typed  from 'react-typed'
+import Accordion from '../component/Accordion/Accordion';
+import Blog from '../component/Blog/BlogComponenet';
+import Design from '../component/Design/Design';
+import Section5 from '../component/Section5/Section5';
+import Footer from '../component/Footer/Footer';
 
 const Home = () => {
 
@@ -64,30 +68,104 @@ const [current, setCurrent] = useState(0);
     }
   };
 
-  const strings = ['Import wahala', 'Trade wahala', 'RMB Wahala', 'China Wahala', 'Ecom Wahala' ];
-  const colors = ['#007F04','#AA1C4D','#994A12','#6333FB','BF3BD6'];
+  const strings = ['Import Wahala', 'Trade Wahala', 'RMB Wahala', 'China Wahala', 'Ecom Wahala' ];
+  const colors = ['#007F04','#AA1C4D','#994A12','#6333FB','#BF3BD6'];
 
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseTime = 1500;
+
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [stringIndex, setStringIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
   const [colorIndex, setColorIndex] = useState(0);
+
+  useEffect(() => {
+    let timeout;
+
+    if (!isDeleting && charIndex <= strings[stringIndex].length) {
+      // Typing
+      timeout = setTimeout(() => {
+        setText(strings[stringIndex].substring(0, charIndex));
+        setCharIndex(charIndex + 1);
+      }, typingSpeed);
+    } else if (isDeleting && charIndex >= 0) {
+      // Deleting
+      timeout = setTimeout(() => {
+        setText(strings[stringIndex].substring(0, charIndex));
+        setCharIndex(charIndex - 1);
+      }, deletingSpeed);
+    } else if (!isDeleting && charIndex > strings[stringIndex].length) {
+      // Pause before deleting
+      timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+    } else if (isDeleting && charIndex < 0) {
+      // Move to next string & color
+      setIsDeleting(false);
+      setStringIndex((stringIndex + 1) % strings.length);
+      setColorIndex((colorIndex + 1) % colors.length);
+      setCharIndex(0);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, stringIndex, strings, colorIndex, colors]);
+
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('.pop-up, .pop-up1, .pop-up2, .pop-up3, .pop-up4');
+    
+// pop-up-- from bottom, pop-up1-- from top, pop-up2-- from right, pop-up3-- from left, pop-up4-- from bottom + slower effect,
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+          entry.target.classList.remove('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+
+    // Cleanup observer on component unmount
+    return () => {
+      elements.forEach(el => observer.unobserve(el));
+    };
+  }, []);  // empty deps => run once on mount
 
   return (
     <div>
       <Header />
       <section className='section1-down'>
-
-          
+  
         <div className='section1'>
           <div  className='section1-left'>
             <div className='flex'>
               <h2>No More</h2>
-              <div>
-                <Typed
-                  strings={strings}
-                  typeSpeed={50}
-                  backSpeed={40}
-                  loop
-                  onStringTyped={(arrayPos) => setColorIndex(arrayPos)}
-                  style={{ color: colors[colorIndex], fontWeight: 'bold', fontSize: '24px' }}
-                />
+              <div className='typingText' style={{
+                color: colors[colorIndex],
+              }} >
+                {text}
+                <span className="cursor">|</span>
+                <style>{`
+                  .cursor {
+                    display: inline-block;
+                    animation: blink 1s infinite;
+                    color: black;
+                    height: 24px;
+                    margin-left: 2px;
+                    width: 2px;
+                    animation: 0.7s steps(2) 0s infinite normal none running blink;
+                  }
+                  @keyframes blink {
+                    0%, 50% { opacity: 1; }
+                    51%, 100% { opacity: 0; }
+                  }
+                `}</style>
               </div>
             </div>
             <p>We handle the tricky parts of E-commerce so you can focus on growing your business</p>
@@ -125,37 +203,39 @@ const [current, setCurrent] = useState(0);
         </div>
       </section>
       
-      <section>
+      <section >
         <div className='card-section'>
-          <p className='sowota'>Sowota Services, Built for importers like you</p>
-          <h2 className='why'>Why Sowota? Because We Get It!</h2>
-          <p className='more'>More ThanJust a Platform - We are Your Buisness Partner</p>
+          <div className='pop-up1'>
+            <p className='sowota'>Sowota Services, Built for importers like you</p>
+            <h2 className='why'>Why Sowota? Because We Get It!</h2>
+            <p className='more'>More Than Just a Platform - We are Your Business Partner</p>
+          </div>
 
           <div className="slider-container">
-          <button className="nav-button left" onClick={prevCard}>‹</button>
+            <button aria-label='Previous Card' className="nav-button left" onClick={prevCard}>‹</button>
 
-          <div className="cards-wrapper"> 
-            <div className="cards-slider">
-              <div
-                className="cards-track"
-                style={{
-                  transform: `translateX(-${current * (66.66 + 1.5)}%)`
-                }}
-              >
-                {cardData.map((card) => (
-                  <div key={card.id} className={`card ${card.backgroundColor}`}>
-                    <img src={card.img} alt={card.title} className='cards-img' />
-                    <div>
-                      <h2 className='cards-h1'>{card.title}</h2>
-                      <p className='cards-p'>{card.text}</p>
+            <div className="cards-wrapper pop-up" > 
+              <div className="cards-slider">
+                <div
+                  className="cards-track"
+                  style={{
+                    transform: `translateX(-${current * (66.66 + 1.5)}%)`
+                  }}
+                >
+                  {cardData.map((card) => (
+                    <div key={card.id} className={`card ${card.backgroundColor}`}>
+                      <img src={card.img} alt={card.title} className='cards-img' />
+                      <div>
+                        <h2 className='cards-h1'>{card.title}</h2>
+                        <p className='cards-p'>{card.text}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
             </div>
           </div>
 
-          <button className="nav-button right" onClick={nextCard}>›</button>
+          <button aria-label='Next Card' className="nav-button right" onClick={nextCard}>›</button>
         </div>
 {/* 
           <div className='cards'> 
@@ -239,8 +319,10 @@ const [current, setCurrent] = useState(0);
       </section>
 
       <section className='section3'>
-          <img src="./src/media/test.png" alt="" />
-          <div className='section3-right'>
+          <div className='pop-up2'>
+            <img src="./src/media/test.png" alt="" />
+          </div>
+          <div className='section3-right pop-up3'>
             <h2> A Thriving Importers Community</h2>
             <h5>We are more than a service we are a movement</h5>
             <ul >
@@ -258,42 +340,56 @@ const [current, setCurrent] = useState(0);
           </div>
       </section>
       
-      <section className='section4'>
-        <h4>Real traders, real success stories</h4>
-        <h1>Wall of Love.</h1>
-        <h2>What others like you are saying.</h2>
-
-        <div  className='section4-cards'>
-          <div className='section4-card'> 
-            <img src="./src/media/person-svg.png" alt="" />
-            <h6>Adun</h6>
-            <p>SÒWÒTA made it so easy for me to pay my Chinese suppliers. Fast transactions, great rates, and I didn’t have to stress at all. Highly recommend</p>
-          </div>
-          <div className='section4-card'>
-            <img src="./src/media/person-svg.png" alt="" />
-            <h6>Joy</h6>
-            <p>My goods arrived in Lagos faster than I expected. Clear communication from start to finish. No hidden charges, no wahala. Thank you, SÒWÒTA!</p>
-          </div>
-          <div className='section4-card'>
-            <img src="./src/media/person-svg.png" alt="" />
-            <h6>xAnita</h6>
-            <p>I bought both sensitive goods (like battery-powered items and liquid chemicals such as face masks) and regular goods, all sent to SÒWÒTA for air shipping. They shipped my sensitive goods separately through Hong Kong and the non-sensitive goods through Guangzhou, helping me save significantly on costs compared to other shipping companies.</p>
-          </div>
-          <div className='section4-card'>
-            <img src="./src/media/person-svg.png" alt="" />
-            <h6>Boluwatife</h6>
-            <p>Funding my Alipay to pay my Chinese suppliers has never been this fast, easy, and safe. Thank you sowota.</p>
-          </div>
-          <div className='section4-card'>
-            <img src="./src/media/person-svg.png" alt="" />
-            <h6>Bola</h6>
-            <p>Thank you so much! You don’t know how much I’ve struggled to find a reliable supplier for my products. May God bless you richly!</p>
+      <section className='section4 pop-up4'>
+        <div className="background-block">
+          <img src="./src/media/overlay.png" alt="" className="decor-overlay"/>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'column'}}>
+            <h4>Real traders, real success stories</h4>
+            <h1>Wall of Love.</h1>
+            <h2>What others like you are saying.</h2>
           </div>
 
+          <div className='section4-wrapper'>
+            <div className='card-width'>
+              <div  className='section4-cards'>
+                <div className='section4-card'> 
+                  <img src="./src/media/person-svg.png" alt="" />
+                  <h6>Adun</h6>
+                  <p>SÒWÒTA made it so easy for me to pay my Chinese suppliers. Fast transactions, great rates, and I didn’t have to stress at all. Highly recommend</p>
+                </div>
+                <div className='section4-card'>
+                  <img src="./src/media/person-svg.png" alt="" />
+                  <h6>Joy</h6>
+                  <p>My goods arrived in Lagos faster than I expected. Clear communication from start to finish. No hidden charges, no wahala. Thank you, SÒWÒTA!</p>
+                </div>
+                <div className='section4-card'>
+                  <img src="./src/media/person-svg.png" alt="" />
+                  <h6>xAnita</h6>
+                  <p>I bought both sensitive goods (like battery-powered items and liquid chemicals such as face masks) and regular goods, all sent to SÒWÒTA for air shipping. They shipped my sensitive goods separately through Hong Kong and the non-sensitive goods through Guangzhou, helping me save significantly on costs compared to other shipping companies.</p>
+                </div>
+                <div className='section4-card'>
+                  <img src="./src/media/person-svg.png" alt="" />
+                  <h6>Boluwatife</h6>
+                  <p>Funding my Alipay to pay my Chinese suppliers has never been this fast, easy, and safe. Thank you sowota.</p>
+                </div>
+                <div className='section4-card'>
+                  <img src="./src/media/person-svg.png" alt="" />
+                  <h6>Bola</h6>
+                  <p>Thank you so much! You don’t know how much I’ve struggled to find a reliable supplier for my products. May God bless you richly!</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+
+          <h5>See more success stories</h5>
         </div>
-
-        <h5>See more success stories</h5>
       </section>
+
+      <Accordion/>
+      <Blog/>
+      <Design/>
+      <Section5/>
+      <Footer/> 
 
     </div>
   )

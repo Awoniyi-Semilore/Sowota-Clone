@@ -1,0 +1,182 @@
+.design-flex {
+    display: flex;
+    margin: 0 auto 70px; /* Centers the container horizontally */
+    align-items: center;
+    width: 80%; /* Set to 80% of parent width */
+    max-width: 1400px; /* Optional: prevent it from getting too wide on large screens */
+    position: relative; /* For proper z-index context */
+}
+.design{
+    background-color: #1a1d3e;
+    border-radius: 20px;
+    padding: 20px;
+    height: 400px;
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+.top-designs{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+.top-design1{
+    height: 200px;
+    width: 40%;
+    object-fit: contain;
+}
+.top-design2{
+    height: 250px;
+    width: 60%;
+    object-fit: contain;
+}
+.bottom-design{
+    margin-top: -170px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+.bottom-design h3{
+    color: #cfbfff;
+    font-size: 19px;
+    margin: 8px 0;
+    white-space: nowrap;
+}
+.bottom-design p{
+    color: #888;
+    font-size: 16px;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+.left-side{
+    margin-right: -16px;
+    height: 400px;
+    z-index: 2;
+    flex-shrink: 0;
+}
+.right-side{
+    margin-left: -16px;
+    height: 400px;
+    z-index: 2;
+}
+.bottom-design h1{
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 1.2;
+    margin-right: -30px;
+}
+.checkpoint-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px; /* Consistent spacing between items */
+}
+/* Animation 1: from bottom and fade in */
+.pop-up {
+  opacity: 0;
+  transform: translateY(120px);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+.pop-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Animation 2: from top and fade in */
+.pop-up1 {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+}
+.pop-up1.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1115px){
+    .design-flex{
+        width: 100%;
+    }
+}
+@media (max-width: 975px) {
+  .design-flex {
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    height: 444px;
+  }
+
+  .left-side{
+    height: auto;
+    object-fit: contain;
+    height: 444px;
+    margin-right: -38px;
+  }
+  .right-side {
+    height: auto;
+    margin-left: -38px;
+    object-fit: contain;
+    height: 444px;
+  }
+
+  .design {
+    height: auto;
+  }
+
+  .top-designs {
+    display: none;
+  }
+
+  .bottom-design {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  .text-design{
+    width: 100%;
+  }
+
+  .bottom-design h1 {
+    margin-right: 0;
+    font-size: 25px;
+  }
+
+  .bottom-design p {
+    font-size: 14px;
+  }
+
+  .bottom-design h3 {
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  .checkpoint-item {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 564px){
+    .left-side,
+    .right-side{
+        display: none;
+    }
+    .design-flex{
+        width: 85%;
+    }
+}

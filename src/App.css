@@ -20,7 +20,7 @@ body {
     position: fixed;
     width: 100%;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     z-index: 10000;
 }
 .burger{
@@ -29,7 +29,7 @@ body {
 .header-right{
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     gap: 75px;
 }
 .header-middle a,
@@ -168,6 +168,14 @@ body {
     color: #000;
     font-size: 13px;
     font-weight: 600;
+}
+.typingText{ 
+    font-Weight: 700;
+    font-Size: 50px;
+    height: 30px;
+    text-Wrap: nowrap;
+    white-Space: nowrap;
+    margin-Bottom: 50px;
 }
 .down-img{
     width: 115%;
@@ -462,7 +470,7 @@ body {
 }
 .section3 img{
     height: 370px;
-    width: 50%;
+    width: 100%;
     float: left;
     position: relative;
 
@@ -493,11 +501,13 @@ ul{
 }
 .section3-a{
     color: #6333FB;
-    background-color: white;
+    background-color: rgb(207, 207, 207);
     padding: 10px 20px;
     border-radius: 10px;
 }
 .section4{
+    position: relative;
+    overflow: hidden;
     background-color: rgb(99, 51, 251);;
     color: white;
     padding: 30px 60px;
@@ -516,6 +526,8 @@ ul{
     font-size: 13px;
     padding: 10px;
     margin-bottom: 30px;
+    margin-top: -100px;
+    width: 400px;
 }
 .section4 h1{
     color: rgb(255, 255, 255);
@@ -528,20 +540,117 @@ ul{
     font-size: 22px;
     font-weight: 600;
 }
-.section4-cards{
+/* .section4-cards{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 10px;
+    overflow: hidden;
+} */
+
+.section4-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow-x: scroll; /* Enable horizontal scroll */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 10px;
+  width: 70%;    
 }
+
+.card-width{
+    width: 70%;
+}
+
+.section4-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .section4-card{
     border: 3px solid rgb(253, 132, 248);
     padding: 7px 13px;
     background-color: rgba(38, 13, 129, 0.712);
     border-radius: 20px;
     animation: 3s linear 0s infinite normal none running rgbCircle;
-    width: 260px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
+}
+.section4-card h6{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 10px 0;
+    color: #DCDBDB;
+}
+.section4-card P{
+    font-size: 11px;
+    font-weight: 400;
+    color: #FFFF;
+}
+.decor-overlay{
+    width: 100%;
+    height: 200px;
+}
+/* .background-block{
+    background-image: url('./media/overlay.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+/* Animation 1: from bottom and fade in */
+.pop-up {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.pop-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Animation 2: from top and fade in */
+.pop-up1 {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.pop-up1.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Animation 3: from right side and fade in */
+.pop-up2 {
+  opacity: 0;
+  transform: translateX(90px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.pop-up2.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Animation 4: from left side and fade in */
+.pop-up3 {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.pop-up3.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Animation 5: from bottom and fade in with slower effect*/
+.pop-up4 {
+  opacity: 0;
+  transform: translateY(90px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.pop-up4.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
@@ -561,6 +670,11 @@ ul{
 
 
 
+@media (max-width: 1115px){
+    .section3{
+        padding:  20px 50px;
+    }
+}
 
 @media (max-width: 1013.63px){
     .header-btn1{
@@ -627,7 +741,7 @@ ul{
         width: 100%;
         float: right;
         right: 0;
-        z-index: 10000;
+        z-index: 1000000;
         top: 0;
         background-color: #1a1d3e;
         overflow-x: hidden;
@@ -636,7 +750,7 @@ ul{
         color: #FFFF;
         padding-top: 25px;
         padding-left: 40px;
-        height: 70% ;
+        height: 400px ;
     }
     .x:only-of-type{
         padding: 0;
@@ -797,6 +911,13 @@ ul{
     .section3 h5{
         padding-top: 0;
         padding-bottom: 17px;
+    }
+    .typingText{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .section1-left{
+        padding: 100px 125px;
     }
 }
 @media (max-width: 500px){

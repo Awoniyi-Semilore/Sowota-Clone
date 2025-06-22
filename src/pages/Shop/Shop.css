@@ -1,0 +1,136 @@
+.shop{
+    background-color: #6333FB;
+}
+.shopoverlay{
+    width: 140%;
+    height: 300px;
+}
+.trolley2{
+    margin-left: 0;
+    margin-top: -20px;
+    width: 223px;
+    height: 230px;
+
+}
+.designs1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -120px;
+}
+.imgTrolley{
+    margin-top: -65px;
+    margin-left: 25%;
+    margin-right: -3%;
+}
+.imgtrolley1{
+    width: 100px;
+    margin-right: -200px;
+    margin-left: 350px;
+    margin-bottom: -80px;
+}
+.designs1 h1{
+    color: white;
+    font-size: 50px;
+    margin-right: -200px;
+    margin-top: -50px;
+}
+.top-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: -30px;
+    padding-bottom: 65px;
+}
+.top-text h2{
+    font-size: 20px;
+    width: 360px;
+    color: white;
+}
+.block{
+    display: block;
+    text-align: center;
+}
+.top-text h3{
+    width: 700px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 22px;
+    color: white;
+}
+
+
+
+
+
+
+
+@media (max-width: 1115px){
+    .top-text{
+        width: 100%;
+        padding: 0 80px;
+        padding-bottom: 65px;
+        margin-top: -30px;
+
+    }
+    .top-h2{
+        width: 40%;
+    }
+    .top-text h3{
+        width: 550px;
+    }
+}
+@media (max-width: 955px){
+    .top-text h2{
+        font-size: 17px;
+    }
+    .top-text h3{
+        font-size: 15px;
+    }
+    .block{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 910px){
+    .top-h2{
+        display: none;
+    }
+    .imgTrolley{
+        display: none;
+    }
+    .imgtrolley1{
+        display: none;
+    }
+    .trolley2{
+        display: none;
+    }
+    .cowry{
+        display: flex;
+    }
+    .designs1 h1{
+        margin-right: 0;
+        margin-top: 0;
+        font-size: 63px;
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .top-text h3{
+        width: 100%;
+        line-height: 25px;
+        text-align: center;
+    }
+    .top-text{
+        margin-top: 30px;
+        padding: 0 20px;
+        padding-bottom: 65px;
+    }
+}
+@media (max-width: 465px){
+    .designs1 h1{
+        font-size: 45px;
+    }
+}
