@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../component/header'
+import '../component/Section4.css'
 import Accordion from '../component/Accordion/Accordion';
 import Blog from '../component/Blog/BlogComponenet';
 import Design from '../component/Design/Design';
@@ -351,7 +352,7 @@ const [current, setCurrent] = useState(0);
 
           <div className='section4-wrapper'>
             <div className='card-width'>
-              <div  className='section4-cards'>
+              <div className='section4-cards'>
                 <div className='section4-card'> 
                   <img src="./src/media/person-svg.png" alt="" />
                   <h6>Adun</h6>
@@ -361,11 +362,6 @@ const [current, setCurrent] = useState(0);
                   <img src="./src/media/person-svg.png" alt="" />
                   <h6>Joy</h6>
                   <p>My goods arrived in Lagos faster than I expected. Clear communication from start to finish. No hidden charges, no wahala. Thank you, SÒWÒTA!</p>
-                </div>
-                <div className='section4-card'>
-                  <img src="./src/media/person-svg.png" alt="" />
-                  <h6>xAnita</h6>
-                  <p>I bought both sensitive goods (like battery-powered items and liquid chemicals such as face masks) and regular goods, all sent to SÒWÒTA for air shipping. They shipped my sensitive goods separately through Hong Kong and the non-sensitive goods through Guangzhou, helping me save significantly on costs compared to other shipping companies.</p>
                 </div>
                 <div className='section4-card'>
                   <img src="./src/media/person-svg.png" alt="" />

@@ -1,0 +1,87 @@
+.section4{
+    /* position: relative;
+    overflow: hidden; */
+    background-color: rgb(99, 51, 251);;
+    color: white;
+    /* padding: 30px 60px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateZ(0px);
+    transition-timing-function: ease; */
+}
+.section4 h4{
+    border: 1px solid rgb(253, 132, 248);
+    text-align: center;
+    border-radius: 24px;
+    font-size: 13px;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: -100px;
+}
+.section4 h1{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.section4 h2{
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    font-weight: 600;
+}
+/* .section4-cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    overflow: hidden;
+} */
+
+.section4-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+   /* overflow-x: scroll; Enable horizontal scroll */
+  /* overflow-y: hidden;
+  scroll-behavior: smooth;   */
+  padding: 10px;   
+  flex-wrap: wrap;
+}
+
+
+
+.section4-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.section4-card{
+    border: 3px solid rgb(253, 132, 248);
+    padding: 7px 13px;
+    background-color: rgba(38, 13, 129, 0.712);
+    border-radius: 20px;
+    /* animation: 3s linear 0s infinite normal none running rgbCircle; */
+    width: 300px;
+    height: 285px;
+}
+.section4-card h6{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 10px 0;
+    color: #DCDBDB;
+}
+.section4-card P{
+    font-size: 11px;
+    font-weight: 400;
+    color: #FFFF;
+}
+.decor-overlay{
+    width: 100%;
+    height: 200px;
+}
