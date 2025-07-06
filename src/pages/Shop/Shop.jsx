@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../component/header'
+import Header from '../../component/Header'
 import shopOverlay from '../../media/overlay-shop.png'
 import aCowry from '../../media/1cowry.png'
 import nearTrolley from '../../media/near-trolley.png'

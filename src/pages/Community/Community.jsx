@@ -1,6 +1,6 @@
 import React from 'react'
 import './Community.css'
-import Header from '../../component/header'
+import Header from '../../component/Header'
 import Footer from '../../component/Footer/Footer'
 import trolley from '../../media/trolley.png'
 

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../component/header'
+import Header from '../component/Header'
 import '../component/Section4.css'
 import Accordion from '../component/Accordion/Accordion';
 import Blog from '../component/Blog/BlogComponenet';
