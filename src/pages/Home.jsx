@@ -20,7 +20,7 @@ import cardImg3 from '../media/card-img-3.png'
 import cardImg4 from '../media/card-img-4.png'
 import cardImg5 from '../media/card-img-5.png'
 import cardImg6 from '../media/card-img-6.png'
-import overlay from '../media/overlay.png'
+import overlay from '../media/overlay-shop.png'
 import personSvg from '../media/person-svg.png'
 
 const Home = () => {
