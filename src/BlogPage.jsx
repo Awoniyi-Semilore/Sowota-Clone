@@ -1,7 +1,7 @@
 import React from 'react'
 import Blog from './component/Blog/BlogComponenet'
-import Header from './component/header'
 import Footer from './component/Footer/Footer'
+import Header from './component/header'
 
 const BlogPage = () => {
   return (
