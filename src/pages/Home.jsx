@@ -7,48 +7,63 @@ import Blog from '../component/Blog/BlogComponenet';
 import Design from '../component/Design/Design';
 import Section5 from '../component/Section5/Section5';
 import Footer from '../component/Footer/Footer';
+import bodyImg1 from '../media/body-img1.png'
+import bodyImg2 from '../media/bodyimg2.png'
+import bodyImg3 from '../media/body-img3.png'
+import bodyImg4 from '../media/body-img4.png'
+import bosy from '../media/bosy-btn-img-what.png'
+import section1Img from '../media/section1-img.svg'
+import downImg2 from '../media/down-img2.png'
+import cardImg from '../media/card-img-1.png'
+import cardImg2 from '../media/card-img-2.png'
+import cardImg3 from '../media/card-img-3.png'
+import cardImg4 from '../media/card-img-4.png'
+import cardImg5 from '../media/card-img-5.png'
+import cardImg6 from '../media/card-img-6.png'
+import overlay from '../media/overlay.png'
+import personSvg from '../media/person-svg.png'
 
 const Home = () => {
 
 const cardData = [
   {
     id: 1,
-    img: './src/media/card-img-1.png',
+    img: cardImg,
     title: 'Swift and Secure Transactions',
     backgroundColor: "card1",
     text: 'Say goodbye to complicated transfers and hidden fees! We offer real-time RMB payments at the best rates, ensuring your transactions are fast, safe, and hassle-free.'
   },
   {
     id: 2,
-    img: './src/media/card-img-2.png',
+    img: cardImg2,
     title: 'Secure RMB Payments',
     backgroundColor: "card2",
     text: 'Effortlessly fund your Alipay or WeChat account using Naira. We ensure fast, secure, and hassle-free transactions.'
   },
   {
     id: 3,
-    img: './src/media/card-img-3.png',
+    img: cardImg3,
     title: 'Procurement & Product Sourcing',
     backgroundColor: "card3",
     text: 'We help you find and procure the best products from legit and verified factories. Our factory inspection service ensures that you are dealing with authentic suppliers, reducing risks and ensuring smooth transactions.'
   },
   {
     id: 4,
-    img: './src/media/card-img-4.png',
+    img: cardImg4,
     title: 'Shipping & Consolidations',
     backgroundColor: "card4",
     text: 'We handle the logistics from China to Nigeria, ensuring your goods are safely consolidated and shipped to your destination.'
   },
   {
     id: 5,
-    img: './src/media/card-img-5.png',
+    img: cardImg5,
     title: 'Negotiation Services',
     backgroundColor: "card5",
     text: 'Our team negotiates directly with Chinese factories in their local language, securing the best deals for you at unbeatable prices.'
   },
   {
     id: 6,
-    img: './src/media/card-img-6.png',
+    img: cardImg6,
     title: 'SÒWOShop',
     backgroundColor: "card6",
     text: 'Verified Factory Products. Buy high-quality products from trusted and verified factories listed on our platform, ensuring authenticity and reliability.'
@@ -171,36 +186,36 @@ const [current, setCurrent] = useState(0);
             </div>
             <p>We handle the tricky parts of E-commerce so you can focus on growing your business</p>
             <div className='section1-img'>
-              <img src="./src/media/body-img1.png" alt="" />
+              <img src={bodyImg1} alt="" />
               <p>Fast & secured NAIRA-RMB Exchange</p>
             </div>
             <div className='section1-img'>
-              <img src="./src/media/bodyimg2.png" alt="" />
+              <img src={bodyImg2} alt="" />
               <p>Sourcing & Procurement done right</p>
             </div>
             <div className='section1-img'>
-              <img src="./src/media/body-img3.png" alt="" />
+              <img src={bodyImg3} alt="" />
               <p>Verified suppliers</p>
             </div>
             <div className='section1-img'>
-              <img src="./src/media/body-img4.png" alt="" />
+              <img src={bodyImg4} alt="" />
               <p>Stress-free logistics</p>
             </div>
             <div className='section1-btn-flex'>
               <a href="https://www.sowota.co/waitlist" className='section1-btn1'>Get Started</a>
               <button className='section1-btn2'>
-                <img src="./src/media/bosy-btn-img-what.png" alt=""/>
+                <img src={bosy} alt=""/>
                 <h6>What we do</h6>
               </button>
             </div>
           </div>
           <div >
-            <img src="./src/media/section1-img.svg" alt=""className='section1-img2' />
+            <img src={section1Img} alt="" className='section1-img2' />
           </div>
         </div>
 
         <div>
-          <img src="./src/media/down-img2.png" alt=""  className='down-img'/>
+          <img src={downImg2} alt=""  className='down-img'/>
         </div>
       </section>
       
@@ -343,7 +358,7 @@ const [current, setCurrent] = useState(0);
       
       <section className='section4 pop-up4'>
         <div className="background-block">
-          <img src="./src/media/overlay.png" alt="" className="decor-overlay"/>
+          <img src={overlay} alt="" className="decor-overlay"/>
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'column'}}>
             <h4>Real traders, real success stories</h4>
             <h1>Wall of Love.</h1>
@@ -359,17 +374,17 @@ const [current, setCurrent] = useState(0);
                   <p>SÒWÒTA made it so easy for me to pay my Chinese suppliers. Fast transactions, great rates, and I didn’t have to stress at all. Highly recommend</p>
                 </div>
                 <div className='section4-card'>
-                  <img src="./src/media/person-svg.png" alt="" />
+                  <img src={personSvg} alt="" />
                   <h6>Joy</h6>
                   <p>My goods arrived in Lagos faster than I expected. Clear communication from start to finish. No hidden charges, no wahala. Thank you, SÒWÒTA!</p>
                 </div>
                 <div className='section4-card'>
-                  <img src="./src/media/person-svg.png" alt="" />
+                  <img src={personSvg} alt="" />
                   <h6>Boluwatife</h6>
                   <p>Funding my Alipay to pay my Chinese suppliers has never been this fast, easy, and safe. Thank you sowota.</p>
                 </div>
                 <div className='section4-card'>
-                  <img src="./src/media/person-svg.png" alt="" />
+                  <img src={personSvg} alt="" />
                   <h6>Bola</h6>
                   <p>Thank you so much! You don’t know how much I’ve struggled to find a reliable supplier for my products. May God bless you richly!</p>
                 </div>

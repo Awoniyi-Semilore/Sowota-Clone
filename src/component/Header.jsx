@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import sowotaHeaderImg from '../media/sowota-header-img.svg'
 
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
         <div className='header'>
             <div>
                 <Link to='/'>
-                    <img src="./src/media/sowota-header-img.svg" alt="" />
+                    <img src={sowotaHeaderImg} alt="" />
                 </Link>
             </div>
             <div className='header-right'>
