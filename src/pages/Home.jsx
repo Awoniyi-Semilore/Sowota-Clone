@@ -22,6 +22,7 @@ import cardImg5 from '../media/card-img-5.png'
 import cardImg6 from '../media/card-img-6.png'
 import overlay from '../media/overlay-shop.png'
 import personSvg from '../media/person-svg.png'
+import test from '../media/test.png'
 
 const Home = () => {
 
@@ -336,7 +337,7 @@ const [current, setCurrent] = useState(0);
 
       <section className='section3'>
           <div className='pop-up2'>
-            <img src="./src/media/test.png" alt="" />
+            <img src={test} alt="" />
           </div>
           <div className='section3-right pop-up3'>
             <h2> A Thriving Importers Community</h2>
