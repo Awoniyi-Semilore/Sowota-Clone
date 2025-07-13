@@ -393,7 +393,7 @@ const [current, setCurrent] = useState(0);
             </div>
           </div>
 
-          <h5>See more success stories</h5>
+          <div className='section4-h5'><h5>See more success stories</h5></div>
         </div>
       </section>
 

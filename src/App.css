@@ -32,7 +32,6 @@ html, body {
     z-index: 10000;
     width: 100%;
     overflow-x: hidden;
-    position: relative; /* Contains absolutely positioned children */
     box-sizing: border-box;
     width: 100% !important; /* Force 100% width */
     left: 0;

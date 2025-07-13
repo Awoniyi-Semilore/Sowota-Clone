@@ -85,3 +85,18 @@
     width: 100%;
     height: 200px;
 }
+.section4 h5{
+    border:  1px solid #FFFF;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.section4-h5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

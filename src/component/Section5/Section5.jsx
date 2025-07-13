@@ -33,9 +33,7 @@ const Section5 = () => {
             <h1>Trusted by 1000+ Importers</h1>
             <p>Join the movement today!</p>
             <div className='center1-a-div'>
-                <a href="https://chat.whatsapp.com/J16x1c8a10OFGeG8HOORRp">
-                   <div className='center1-a'>Start your importation journey now</div>
-                </a>
+                <a href="https://chat.whatsapp.com/J16x1c8a10OFGeG8HOORRp" className='center1-a'>Start your importation journey now</a>
             </div>
 
         </div> 

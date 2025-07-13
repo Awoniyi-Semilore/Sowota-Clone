@@ -1,34 +1,36 @@
 .section5{
-    margin: 120px 18%;
+    padding-top: 100px;
 }
 .section5 img{
-    height: 100px;
+    height: 70px;
 }
 .profileImgs{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
 .profileTop{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 80%;
+    align-items: center;
+    gap: 150px;
+    padding: 0 30%;
 }
 .profileCenter{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 150%;
-    margin: 0 16%;
+    gap: 170px;
+    padding: 0 37%;
 }
 .profileBottom{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 290%;
+    gap: 200px;
+    padding: 0 70%;
 }
 .center1{
     margin-top: -330px;
@@ -39,19 +41,20 @@
     font-size: 45px;
     font-weight: 650;
     line-height: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     text-align: center;
 }
 .center1 p{
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
-    margin-bottom: 20px;
-    margin-left: -10%;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    text-align: center;
 }
 .center1-a-div{
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 .center1-a{
@@ -62,8 +65,7 @@
     color: #fff;
     text-align: center;
     font-size: 16px;
-    margin-top: 60px;
-    margin-left: -10%;
+    margin-top: 45px;
     font-weight: 550;
 }
 .center1-a:hover{
@@ -76,11 +78,7 @@
 
 
 
-@media (max-width: 1115px){
-    .section5{
-    margin: 120px 14%;
-}
-}
+
 @media (max-width: 970px){
     .section5{
         padding: 120px 0;
