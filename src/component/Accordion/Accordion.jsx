@@ -63,15 +63,15 @@ const Accordion = () => {
 
 
   return (
-    <div className='section5'>
+    <div className='section6'>
       <div className='pop-up'>
         <h1>We know you have questions.</h1>
         <h2>So we answered them below!</h2>
       </div>
-      <div className='section5-accordions pop-up4'>
+      <div className='section6-accordions pop-up4'>
         {accordionData.map((item, index) => (
           <div className='accordion' key={index}>
-            <div className='section5-accordion' onClick={() => toggle(index)}>
+            <div className='section6-accordion' onClick={() => toggle(index)}>
               <p>{item.question}</p>
               <span className='icon'>{activeIndex === index ? "↓" : "→"}</span>
             </div>

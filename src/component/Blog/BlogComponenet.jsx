@@ -6,7 +6,7 @@ import cardImg3 from "../../media/card-img3.png"
 
 const Blog = () => {
     useEffect(() => {
-        const elements = document.querySelectorAll('.pop-up, .pop-up1, .pop-up2, .pop-up3, .pop-up4');
+        const elements = document.querySelectorAll('.pop-up, .pop-up1, .pop-up2, .pop-up3, .pop-up4, .pop-up5');
         
     // pop-up-- from bottom, pop-up1-- from top, pop-up2-- from right, pop-up3-- from left, pop-up4-- from bottom + slower effect,
     

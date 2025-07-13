@@ -1,74 +1,119 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.section5{
+
+.section6 {
     margin: 70px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This ensures perfect centering */
 }
-.section5 h1{
+
+.section6 h1 {
     color: black;
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 7px;
     text-align: center;
+    width: 100%; /* Full width text alignment */
 }
-.section5 h2{
+
+.section6 h2 {
     color: black;
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
+    width: 100%; /* Full width text alignment */
 }
-.section5-accordion{
+
+.section6-accordions {
+    width: 100%;
+    max-width: 700px; /* Keeping your desired width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers children */
+}
+
+.section6-accordion {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%; /* Full width of parent */
 }
-.section5-accordion p{
+
+.section6-accordion p {
     font-weight: 700;
     font-size: 17px;
 }
-.accordion{
-    margin: 0 20%;
+
+.accordion {
+    width: 90%; /* Slightly less than full width for breathing room */
     background-color: #dfdfdf;
     color: #6333FB;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 7px;
 }
-.accordion h6{
-    padding-top: 30px ;
+
+.accordion h6 {
+    padding-top: 30px;
     font-size: 15px;
     color: #333;
     font-weight: 450;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
 
-.block{
+.block {
     display: block;
 }
-.accordion-bottom{
+
+.accordion-bottom {
     margin: 60px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%; /* Full width for proper centering */
 }
-.accordion-bottom h1{
+
+.accordion-bottom h1 {
     color: black;
     font-size: 30px;
     text-align: center;
     margin-bottom: 40px;
     font-weight: 600;
 }
-.accordion-bottom a{
+
+.accordion-bottom a {
     background-color: #6333FB;
     color: white;
     font-size: 13px;
     padding: 10px 40px;
     border-radius: 10px;
     text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .section6 h1,
+    .section6 h2 {
+        font-size: 24px;
+        font-weight: 40px;
+        padding:  0 10px;
+    }
+    
+    .accordion {
+        width: 90%; /* Slightly wider on mobile */
+    }
+    
+    .section6-accordion p {
+        font-size: 15px;
+    }
 }
